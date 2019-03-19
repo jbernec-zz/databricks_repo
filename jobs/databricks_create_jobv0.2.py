@@ -10,13 +10,13 @@ import argparse
 import logging
 from pprint import pprint
 
-JOB_SRC_PATH = "c:/BitBucket/databricks_repo/Jobs/job_demo.ipynb"
+JOB_SRC_PATH = "c:/bitbucket/databricks_repo/jobs/job_demo.ipynb"
 JOB_DEST_PATH = "/notebooks/jobs_demo"
 INIT_SCRIPT_SRC_PATH = "c:/BitBucket/databricks_repo/Workspace-DB50/cluster-init1a.sh"
 INIT_SCRIPT_DEST_PATH = "dbfs:/databricks/rstudio/"
 RSTUDIO_FS_PATH = "dbfs:/databricks/rstudio"
 WORKSPACE_PATH = "/notebooks"
-JOB_JSON_PATH = "c:/BitBucket/databricks_repo/Jobs/databricks_new_cluster_job.json"
+JOB_JSON_PATH = "c:/bitbucket/databricks_repo/Jobs/databricks_new_cluster_job.json"
 JOBSENDPOINT = "https://eastus.azuredatabricks.net/api/2.0/jobs/create"
 DATABRICKSTOKEN = "dapida52ef57bb20abc01275a304cfd2d95e"
 
@@ -34,7 +34,7 @@ def config_databricks_token(token):
     """Configure
         databricks token"""
     try:
-        databricks_config_path = "c:/Users/charleschukwudozie/.databrickscfg"
+        databricks_config_path = "c:/Users/juser/.databrickscfg"
         with open(databricks_config_path, "w") as f:
             clear_file = f.truncate()
             databricks_config = ["[DEFAULT]\n","host = https://eastus.azuredatabricks.net\n","token = {}\n".format(token),"\n"]
