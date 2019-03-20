@@ -155,6 +155,5 @@ if __name__ == "__main__":
     resp = create_job(JOBSENDPOINT, headers, data)
     resp = resp.json() # dict job id object "{'job_id': 9}"
     print("Job ID", resp['job_id'])
-    logging.debug("Submitted Job ID:", resp['job_id'])
     run_job(resp['job_id']) # To be used with the create jobs api only
     
