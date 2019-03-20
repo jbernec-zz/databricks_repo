@@ -1,0 +1,62 @@
+{
+    "name": "Item_Table_Create",
+    "new_cluster": {
+        "spark_version": "5.0.x-ml-scala2.11",
+        "node_type_id": "Standard_DS3_v2",
+        "spark_conf":{
+            "spark.databricks.cluster.profile":"serverless",
+            "spark.databricks.repl.allowedLanguages":"sql,python,r",
+            "spark.databricks.delta.preview.enabled": true,
+            "spark.sql.crossJoin.enabled": true,
+            "spark.driver.maxResultSize": "20g",
+            "spark.network.timeout": 2000,
+            "spark.databricks.service.server.enabled": true,
+            "spark.databricks.service.port": 8787,
+            "spark.sql.execution.arrow.enabled": true
+         },
+         "init_scripts": [ {
+            "dbfs": {
+              "destination": "dbfs:/databricks/rstudio/cluster-init1a.sh"
+            }
+          } ],
+          "cluster_log_conf": {
+            "dbfs" : {
+              "destination": "dbfs:/cluster-logs"
+            }
+          },
+        "num_workers": 2
+      },
+    "libraries": [
+        {
+            "pypi": {
+                "package": "datacompy"
+              }
+        },
+        {
+            "cran": {
+              "package": "xgboost",
+              "repo": "http://cran.us.r-project.org"
+            }
+          },
+        {
+            "maven": {
+                "coordinates": "com.microsoft.sqlserver:mssql-jdbc:6.5.3.jre8-preview"
+            }
+        }
+    ],
+    "email_notifications": {
+        "on_start": ["charles.chukwudozie@spr.com"],
+        "on_success": ["charles.chukwudozie@spr.com"],
+        "on_failure": ["charles.chukwudozie@spr.com"]
+      },
+    "timeout_seconds": 3600,
+    "max_retries": 1,
+    "notebook_task": {
+        "_comment": "path param||notebook_path||notebooks/python_notebook",
+        "notebook_path": "/notebooks/jobs_demo",
+        "base_parameters": {           
+            "argument1": "value 1",
+            "argument2": "value 2"
+        }
+    }
+}
