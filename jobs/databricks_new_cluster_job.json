@@ -45,9 +45,9 @@
         }
     ],
     "email_notifications": {
-        "on_start": ["charles.chukwudozie@spr.com"],
-        "on_success": ["charles.chukwudozie@spr.com"],
-        "on_failure": ["charles.chukwudozie@spr.com"]
+        "on_start": ["charlesc@wpress.com"],
+        "on_success": ["charlesc@wpress.com"],
+        "on_failure": ["charlesc@wpress.com"]
       },
     "timeout_seconds": 3600,
     "max_retries": 1,
