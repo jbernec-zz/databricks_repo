@@ -151,7 +151,6 @@ def get_arguments():
 #Driver function
 if __name__ == "__main__":
     logging.basicConfig(filename="c:/bitBucket/databricks_repo/jobs/dbricks_job.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
-    # logging.basicConfig(filename="c:/bitBucket/databricks_repo/jobs/dbricks.log", filemode="a", level=logging.ERROR, format="%(asctime)s %(message)s")
     # arg_results = get_arguments()
     # databricks_token = arg_results.token
     headers, data = create_api_post_args(DATABRICKSTOKEN, JOB_JSON_PATH)
