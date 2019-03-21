@@ -11,7 +11,7 @@ import logging
 import yaml
 from pprint import pprint
 
-JOB_SRC_PATH = "c:/BitBucket/databricks_repo/Jobs/job_demo.ipynb"
+JOB_SRC_PATH = "c:/bitbucket/databricks_repo/Jobs/job_demo.ipynb"
 JOB_DEST_PATH = "/notebooks/jobs_demo"
 INIT_SCRIPT_SRC_PATH = "c:/bitbucket/databricks_repo/workspace-db50/cluster-init1a.sh"
 INIT_SCRIPT_DEST_PATH = "dbfs:/databricks/rstudio/"
@@ -39,7 +39,7 @@ def config_databricks_token(token):
     """Configure
         databricks token"""
     try:
-        databricks_config_path = "c:/Users/charleschukwudozie/.databrickscfg"
+        databricks_config_path = "c:/Users/juser/.databrickscfg"
         with open(databricks_config_path, "w") as f:
             clear_file = f.truncate()
             databricks_config = ["[DEFAULT]\n","host = https://eastus.azuredatabricks.net\n","token = {}\n".format(token),"\n"]
