@@ -1,0 +1,26 @@
+{
+  "cluster_name": "cluster_demo_01",
+  "spark_version": "5.0.x-ml-scala2.11",
+  "node_type_id": "Standard_D3_v2",
+  "spark_env_vars": {
+    "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+  },
+  "cluster_log_conf": {
+    "dbfs": {
+      "destination": "dbfs:/cluster-logs"
+    }
+  },
+  "spark_conf": {
+    "spark.databricks.delta.preview.enabled": true,
+    "spark.sql.crossJoin.enabled": true,
+    "spark.network.timeout": 2000,
+    "spark.databricks.service.server.enabled": true,
+    "spark.databricks.service.port": 8787,
+    "spark.sql.execution.arrow.enabled": true
+  },
+  "autoscale": {
+    "min_workers": 1,
+    "max_workers": 2
+  },
+  "autotermination_minutes": 20
+}
