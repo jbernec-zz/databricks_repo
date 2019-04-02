@@ -11,11 +11,11 @@ from azure.common.credentials import ServicePrincipalCredentials
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.resource.resources.models import DeploymentMode
 
-YAML_VARS_FILE = "c:\\bitbucket\\databricks_repo\\workspace-db50\\databricks_workspace_vars.yaml"
-TEMPLATE_PATH = "c:/bitbucket/databricks_repo/workspace-db50/databricks_premium_workspaceLab.json"
+YAML_VARS_FILE = "c:\\databricks_repo\\workspace-db50\\databricks_workspace_vars.yaml"
+TEMPLATE_PATH = "c:/databricks_repo/workspace-db50/databricks_premium_workspaceLab.json"
 RESOURCE_GROUP_PARAMS = {"location": "eastus"}
 RESOURCE_GROUP_NAME = "RGDatabricks"
-JSON_REQUEST_PATH = "c:\\bitbucket\\databricks_repo\\workspace-db50\\deploy_databricks_cluster_restapi.json"
+JSON_REQUEST_PATH = "c:\\databricks_repo\\workspace-db50\\deploy_databricks_cluster_restapi.json"
 
 def read_yaml_vars_file(yaml_file):
     """Read yaml
