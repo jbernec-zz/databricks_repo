@@ -13,9 +13,9 @@ from pprint import pprint
 
 JOB_SRC_PATH = "c:/databricks_repo/Jobs/job_demo.ipynb"
 JOB_DEST_PATH = "/notebooks/jobs_demo"
-INIT_SCRIPT_SRC_PATH = "c:/databricks_repo/workspace-db50/init.sh"
-INIT_SCRIPT_DEST_PATH = "dbfs:/databricks/rstudio/"
-RSTUDIO_FS_PATH = "dbfs:/databricks/rstudio"
+INIT_SCRIPT_SRC_PATH = "c:/databricks_repo/workspace/init.sh"
+INIT_SCRIPT_DEST_PATH = "dbfs:/databricks/scripts/"
+RSTUDIO_FS_PATH = "dbfs:/databricks/scripts"
 WORKSPACE_PATH = "/notebooks"
 JOB_JSON_PATH = "c:/databricks_repo/jobs/databricks_new_cluster_job.json"
 
