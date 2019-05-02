@@ -11,15 +11,15 @@ import logging
 import yaml
 from pprint import pprint
 
-JOB_SRC_PATH = "c:/bitbucket/databricks_repo/Jobs/job_demo.ipynb"
+JOB_SRC_PATH = "c:/databricks_repo/Jobs/job_demo.ipynb"
 JOB_DEST_PATH = "/notebooks/jobs_demo"
-INIT_SCRIPT_SRC_PATH = "c:/bitbucket/databricks_repo/workspace-db50/cluster-init1a.sh"
+INIT_SCRIPT_SRC_PATH = "c:/databricks_repo/workspace-db50/init.sh"
 INIT_SCRIPT_DEST_PATH = "dbfs:/databricks/rstudio/"
 RSTUDIO_FS_PATH = "dbfs:/databricks/rstudio"
 WORKSPACE_PATH = "/notebooks"
-JOB_JSON_PATH = "c:/bitbucket/databricks_repo/jobs/databricks_new_cluster_job.json"
+JOB_JSON_PATH = "c:/databricks_repo/jobs/databricks_new_cluster_job.json"
 
-with open("c:\\bitbucket\\databricks_repo\\jobs\\databricks_vars_file.yaml") as config_yml_file:
+with open("c:\\databricks_repo\\jobs\\databricks_vars_file.yaml") as config_yml_file:
     databricks_vars = yaml.safe_load(config_yml_file)
 
 JOBSENDPOINT = databricks_vars["databricks-config"]["host"]
@@ -150,7 +150,7 @@ def get_arguments():
 
 #Driver function
 if __name__ == "__main__":
-    logging.basicConfig(filename="c:/bitBucket/databricks_repo/jobs/dbricks_job.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(filename="c:/databricks_repo/jobs/dbricks_job.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
     # arg_results = get_arguments()
     # databricks_token = arg_results.token
     headers, data = create_api_post_args(DATABRICKSTOKEN, JOB_JSON_PATH)
