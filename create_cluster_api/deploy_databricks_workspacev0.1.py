@@ -131,12 +131,12 @@ def create_cluster_req(api_endpoint,headers_config,data):
 
 #Driver function
 if __name__ == "__main__":
-    logging.basicConfig(filename="c:\\bitBucket\\databricks_repo\\Workspace-DB50\\deploy_dbricks_ws.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(filename="c:\\databricks_repo\\Workspace-DB50\\deploy_dbricks_ws.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
     subscription_id, clientid, key, tenantid, api_endpoint = read_yaml_vars_file(YAML_VARS_FILE)
     client = get_auth_credentials(subscription_id,clientid,key,tenantid)
     deploy_databricks_workspace(client,TEMPLATE_PATH,RESOURCE_GROUP_NAME,RESOURCE_GROUP_PARAMS)
-    # time.sleep(60)
     ws_token = token_console_input()
     print(ws_token)
     headers, data = cluster_post_req_args(ws_token, JSON_REQUEST_PATH)
+    time.sleep(30)
     response = create_cluster_req(api_endpoint,headers,data)
