@@ -11,11 +11,11 @@ from azure.common.credentials import ServicePrincipalCredentials
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.resource.resources.models import DeploymentMode
 
-YAML_VARS_FILE = "c:\\databricks_repo\\workspace-db50\\databricks_workspace_vars.yaml"
-TEMPLATE_PATH = "c:/databricks_repo/workspace-db50/databricks_premium_workspaceLab.json"
+YAML_VARS_FILE = "Workspace-DB50\\databricks_workspace_vars.yaml"
+TEMPLATE_PATH = "Workspace-DB50\\databricks_premium_workspaceLab.json"
 RESOURCE_GROUP_PARAMS = {"location": "eastus"}
 RESOURCE_GROUP_NAME = "RGDatabricks"
-JSON_REQUEST_PATH = "c:\\databricks_repo\\workspace-db50\\deploy_databricks_cluster_restapi.json"
+JSON_REQUEST_PATH = "Workspace-DB50\\deploy_databricks_cluster_restapi.json"
 
 def read_yaml_vars_file(yaml_file):
     """Read yaml
@@ -131,7 +131,7 @@ def create_cluster_req(api_endpoint,headers_config,data):
 
 #Driver function
 if __name__ == "__main__":
-    logging.basicConfig(filename="c:\\databricks_repo\\Workspace-DB50\\deploy_dbricks_ws.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(filename="Workspace-DB50\\deploy_dbricks_ws.log", filemode="a", level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
     subscription_id, clientid, key, tenantid, api_endpoint = read_yaml_vars_file(YAML_VARS_FILE)
     client = get_auth_credentials(subscription_id,clientid,key,tenantid)
     deploy_databricks_workspace(client,TEMPLATE_PATH,RESOURCE_GROUP_NAME,RESOURCE_GROUP_PARAMS)
