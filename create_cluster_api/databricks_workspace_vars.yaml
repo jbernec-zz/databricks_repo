@@ -1,0 +1,6 @@
+databricks-ws-config:
+                  clientid: h34gdte6-c19f-g265-jd54-42b1fc2b34tg
+                  key: vS_rr-4237m_UTiK1KyVkNrungsBtsgBh&
+                  tenantid: 72f988bf-86f1-31be-91ab-d52njdmh6387
+                  subscription_id: dbh563gd-d66y-473f-78dg-bhe53676yhe367
+                  api-endpoint: https://eastus.azuredatabricks.net/api/2.0/clusters/create 
