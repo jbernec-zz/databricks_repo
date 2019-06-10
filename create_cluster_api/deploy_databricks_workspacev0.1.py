@@ -7,15 +7,17 @@ import yaml
 import base64
 import requests
 import time
+from pathlib import Path
 from azure.common.credentials import ServicePrincipalCredentials
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.resource.resources.models import DeploymentMode
 
-YAML_VARS_FILE = "Workspace-DB50\\databricks_workspace_vars.yaml"
-TEMPLATE_PATH = "Workspace-DB50\\databricks_premium_workspaceLab.json"
+DATA_PATH = Path.cwd()
+YAML_VARS_FILE = "{}/databricks_workspace_vars.yaml".format(DATA_PATH)
+TEMPLATE_PATH = "{}/databricks_premium_workspaceLab.json".format(DATA_PATH)
 RESOURCE_GROUP_PARAMS = {"location": "eastus"}
 RESOURCE_GROUP_NAME = "RGDatabricks"
-JSON_REQUEST_PATH = "Workspace-DB50\\deploy_databricks_cluster_restapi.json"
+JSON_REQUEST_PATH = "{}/deploy_databricks_cluster_restapi.json".format(DATA_PATH)
 
 def read_yaml_vars_file(yaml_file):
     """Read yaml
